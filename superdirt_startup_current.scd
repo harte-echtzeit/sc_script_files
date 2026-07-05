@@ -20,6 +20,7 @@ s.reboot { // server options are only updated on reboot
 		~dirt = SuperDirt(2, s); // two output channels, increase if you want to pan across more channels
 		// ~dirt.loadSoundFiles;   // load samples (path containing a wildcard can be passed in)
 		~dirt.loadSoundFiles(".local/share/SuperCollider/downloaded-quarks/Dirt-Samples/*");
+		~dirt.loadSoundFiles("/home/chrs/projects/audio/samples/*");
 		~dirt.loadSoundFiles("/home/chrs/programmierung/audio/tidal/samples-extra/*");
 		// for example: ~dirt.loadSoundFiles("/Users/myUserName/Dirt/samples/*");
 		s.sync; // optionally: wait for samples to be read
@@ -36,7 +37,7 @@ s.reboot { // server options are only updated on reboot
 		~mixer = SuperDirtMixer(~dirt);
 
 		// You can adjust parameters before you use the ui
-		~mixer.setOrbitLabels(["d1 - Lead", "d2 - Bass", "d3 - Key", "d4 - Pad"]);
+		// ~mixer.setOrbitLabels(["d1 - Lead", "d2 - Bass", "d3 - Key", "d4 - Pad"]);
 		~mixer.setMasterBus(0);
 		~mixer.gui;
 
@@ -50,6 +51,6 @@ s.reboot { // server options are only updated on reboot
 		//~looper.debugMode = true;
 	};
 
-	s.latency = 0.7; // increase this if you get "late" messages
+	s.latency = 1.5; // increase this if you get "late" messages
 };
 );
