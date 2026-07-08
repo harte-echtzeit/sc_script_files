@@ -50,7 +50,7 @@ s.reboot { // server options are only updated on reboot
 		//~looper.debugMode = true;
 	};
 
-	s.latency = 0.7; // increase this if you get "late" messages
+	s.latency = 1.5; // increase this if you get "late" messages
 };
 
 );
