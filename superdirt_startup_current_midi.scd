@@ -1,6 +1,5 @@
 /*
-This is an example startup file. You can load it from your startup file
-(to be found in Platform.userAppSupportDir +/+ "startup.scd")
+This is HARTE ECHTZEIT's current live setup including faderfox MIDI controller
 */
 
 
@@ -20,7 +19,12 @@ s.reboot { // server options are only updated on reboot
 		~dirt = SuperDirt(2, s); // two output channels, increase if you want to pan across more channels
 		// ~dirt.loadSoundFiles;   // load samples (path containing a wildcard can be passed in)
 		~dirt.loadSoundFiles(".local/share/SuperCollider/downloaded-quarks/Dirt-Samples/*");
+		// legacy Linux sample loading
 		~dirt.loadSoundFiles("/home/chrs/programmierung/audio/tidal/samples-extra/*");
+		// on Mac
+		~dirt.loadSoundFiles("/Users/E131046/projects/tidal/samples-extra/*");
+		//on newer Linux systems
+		~dirt.loadSoundFiles("/home/chrs/projects/audio/samples/*");
 		// for example: ~dirt.loadSoundFiles("/Users/myUserName/Dirt/samples/*");
 		s.sync; // optionally: wait for samples to be read
 		~dirt.start(57120, 0 ! 12);   // start listening on port 57120, create two busses each sending audio to channel 0
@@ -206,5 +210,3 @@ if (~stopMidiMuteControl != nil, {
 };
 
 );
-
-//);
