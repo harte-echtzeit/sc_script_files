@@ -19,7 +19,7 @@ s.reboot { // server options are only updated on reboot
     // boot the server and start SuperDirt
     s.waitForBoot {
         ~dirt = SuperDirt(26, s); // two output channels, increase if you want to pan across more channels
-        //~dirt.loadSoundFiles;   // load samples (path containing a wildcard can be passed in)
+        ~dirt.loadSoundFiles;   // load samples (path containing a wildcard can be passed in)
         ~dirt.loadSoundFiles(".local/share/SuperCollider/downloaded-quarks/Dirt-Samples/*");
         ~dirt.loadSoundFiles("/Users/E131046/projects/tidal/samples-extra/*");
         ~dirt.loadSoundFiles("/home/chrs/projects/audio/samples/*");
